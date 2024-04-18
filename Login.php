@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "tomec";
 $password = "Utdftw";
-$dbname = "test";
+$dbname = "arcade1";
 
 // variables submitted by users
 $loginUser = $_POST["loginUser"];
@@ -24,8 +24,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-  while($row = $result->fetch_assoc()) {  // associative array
-    if ($row["password_hash"] == $loginPass) {
+  while($row = $result->fetch_assoc()) {  // associative array 
+	  if (password_verify($loginPass, $row["password_hash"])) {
       echo "Login Success.";
     // Get user's data here.
 

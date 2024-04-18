@@ -1,7 +1,7 @@
 <?php
 $user = "example_user";
 $password = "Utdftw";
-$database = "test";
+$database = "arcade1";
 $table = "player";
 
 try {

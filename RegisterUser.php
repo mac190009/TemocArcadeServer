@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "tomec";
 $password = "Utdftw";
-$dbname = "test";
+$dbname = "arcade1";
 
 // variables submitted by users
 $loginUser = $_POST["loginUser"];
@@ -29,10 +29,10 @@ if ($result->num_rows > 0) {
 
 } else {
 	echo "Creating user...";
-	//$passHash = password_hash($loginPass, PASSWORD_DEFAULT);
+	$passHash = password_hash($loginPass, PASSWORD_DEFAULT);
 	// insert the user and password into the database
 	$sql2 = "INSERT INTO player (username, password_hash, email)
-	       VALUES ('" . $loginUser . "', '" . $loginPass . "', '" . $loginEmail ."')";
+	       VALUES ('" . $loginUser . "', '" . $passHash . "', '" . $loginEmail ."')";
 
 	if ($conn->query($sql2) === TRUE) {
 		echo "New record created successfully";
