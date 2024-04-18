@@ -19,14 +19,14 @@ if ($conn->connect_error) {
 //echo "Connected successfully!  Now we will show the users.<br><br>";
 
 
-$sql = "SELECT password_hash FROM player WHERE username = '" . $loginUser . "'";
+$sql = "SELECT id, password_hash FROM player WHERE username = '" . $loginUser . "'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {  // associative array 
 	  if (password_verify($loginPass, $row["password_hash"])) {
-      echo "Login Success.";
+      echo $row["id"];
     // Get user's data here.
 
     //Get player info.
