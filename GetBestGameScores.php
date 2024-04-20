@@ -6,12 +6,9 @@ $password = "Utdftw";
 $dbname = "arcade1";
 
 // variables submitted by users
-//$loginUser = $_POST["loginUser"];
-//$loginPass = $_POST["loginPass"];
 $gameName = $_POST["gameName"];
 
 // Create connection
-//$conn = new mysqli($servername, $username, $password, $dbname);
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
@@ -19,11 +16,11 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT p.username, s.score 
-        FROM player AS p INNER JOIN scoreboard AS s
-        ON p.id = s.player_id
-        ORDER BY s.score DESC
-        WHERE s.game= '" . $gameName . "'
-        LIMIT 10";
+	FROM player AS p INNER JOIN scoreboard AS s 
+	ON p.id = s.player_id
+	WHERE s.game='" . $gameName . "' 
+	ORDER BY s.score DESC";
+//        LIMIT 10";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
