@@ -1,5 +1,5 @@
-//This page takes a game name as an argument and returns a JSON encoded string containing the 10 highest scores and the usernames of the player that made the score.
 <?php
+//This page takes a game name as an argument and returns a JSON encoded string containing the 10 highest scores and the usernames of the player that made the score.
 $servername = "localhost";
 $username = "tomec";
 $password = "Utdftw";
