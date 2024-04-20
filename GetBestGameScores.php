@@ -19,8 +19,8 @@ $sql = "SELECT p.username, s.score
 	FROM player AS p INNER JOIN scoreboard AS s 
 	ON p.id = s.player_id
 	WHERE s.game='" . $gameName . "' 
-	ORDER BY s.score DESC";
-//        LIMIT 10";
+	ORDER BY s.score DESC
+        LIMIT 10";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
