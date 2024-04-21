@@ -1,5 +1,6 @@
 <?php
 //This page takes a playerID as argument and returns a JSON encoded list of the requesters username, ID, and the date of request.
+// Example output: [{"username":"test2","player_id1":"2","date":"2024-04-18 22:09:05"}]
 $servername = "localhost";
 $username = "temoc";
 $password = "Utdftw";
