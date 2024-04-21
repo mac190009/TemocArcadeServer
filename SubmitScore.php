@@ -40,6 +40,16 @@ if ($result->num_rows > 0) {
 } else {
   echo "0";
 }
+
+$sql = "INSERT INTO scoreboard (player_id, session_id, score, game, play_time)
+		VALUES('" . $playerID . "', '" . $sessCount + 1 . "', '" . $score . "', '" . $gameName . "', '" . $playTime . "')";
+
+//$result = $conn->query($sql);
+if ($conn->query($sql) === TRUE) { 
+          echo "Score successfully submitted!"; 
+    }else { 
+          echo "Error: " . $sql . "<br>" . $conn->error; 
+    } 
  
 $conn->close();
 ?>
