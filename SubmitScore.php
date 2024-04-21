@@ -7,10 +7,10 @@ $password = "Utdftw";
 $dbname = "arcade1";
 
 // variables submitted by users
-$playerID = _POST["playerID"];
-$gameName = _POST["gameName"];
-$score = _POST["score"];
-$playTime = _POST["playTime"];
+$playerID = 1;// _POST["playerID"];
+//$gameName = _POST["gameName"];
+//$score = _POST["score"];
+//$playTime = _POST["playTime"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,17 +23,23 @@ if ($conn->connect_error) {
 $sql = "SELECT COUNT(*) FROM scoreboard WHERE player_id='" . $playerID . "'";
 
 $result = $conn->query($sql);
+//$sessCount = result->fetch_assoc();//["COUNT(*)"];
+//echo $sessCount["COUNT(*)"];
+//echo $result->fetch_assoc()["COUNT(*)"];
 
 if ($result->num_rows > 0) {
   // output data of each row
-  $rows = array();
+  //$rows = array();
   while($row = $result->fetch_assoc()) {  // associative array 
-	  $rows[] = $row;
+	  //$rows[] = $row;
+	  //echo "COUNT(*): " . $row["COUNT(*)"];
+	  $sessCount = $row["COUNT(*)"];
   }
-  echo json_encode($rows);
+  echo $sessCount + 1; // This is the sessionID for this score submission.
+  //echo json_encode($rows);
 } else {
   echo "0";
 }
-
+ 
 $conn->close();
 ?>
