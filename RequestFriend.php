@@ -17,8 +17,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+// Get friendID from friendName
 $sql = "SELECT id FROM player WHERE username='" . $friendName . "'";
-
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -31,6 +31,7 @@ if ($result->num_rows > 0) {
   echo "0";
 }
 
+// Submit friend_request
 $sql = "INSERT INTO friend_request (player_id1, player_id2, status) VALUES ('" . $playerID . "', '" . $friendID . "', 'PENDING')";
 
 //$result = $conn->query($sql);
