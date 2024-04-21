@@ -7,8 +7,8 @@ $password = "Utdftw";
 $dbname = "arcade1";
 
 // variables submitted by users
-$playerID = _POST["playerID"];
-$friendName = "test";//_POST["friendName"];
+$playerID = 1;//_POST["playerID"];
+$friendName = "test3";//_POST["friendName"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -32,6 +32,15 @@ if ($result->num_rows > 0) {
 } else {
   echo "0";
 }
+
+$sql = "INSERT INTO friend_request (player_id1, player_id2, status) VALUES ('" . $playerID . "', '" . $friendID . "', 'PENDING')";
+
+//$result = $conn->query($sql);
+if ($conn->query($sql) === TRUE) { 
+          echo "Friend request created!"; 
+    }else { 
+          echo "Error: " . $sql . "<br>" . $conn->error; 
+    } 
 
 $conn->close();
 ?>
