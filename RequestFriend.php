@@ -7,8 +7,8 @@ $password = "Utdftw";
 $dbname = "arcade1";
 
 // variables submitted by users
-$playerID = 1;//_POST["playerID"];
-$friendName = "test3";//_POST["friendName"];
+$playerID = _POST["playerID"];
+$friendName = _POST["friendName"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,12 +23,10 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-  //$rows = array();
   while($row = $result->fetch_assoc()) {  // associative array 
 	  $friendID = $row["id"];
   }
-  //echo json_encode($rows);
-  echo $friendID;
+  //echo $friendID;
 } else {
   echo "0";
 }
