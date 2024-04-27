@@ -7,9 +7,9 @@ $password = "Utdftw";
 $dbname = "arcade1";
 
 // variables submitted by users
-$frienderID = _POST["frienderID"];  // ID of player who requested friendship.
-$friendeeID = _POST["friendeeID"];  // ID of player who received the request (Intended user of this page)
-$requestDate = _POST["requestDate];  // Date request was made.
+$frienderID = $_POST["frienderID"];  // ID of player who requested friendship.
+$friendeeID = $_POST["friendeeID"];  // ID of player who received the request (Intended user of this page)
+$requestDate = $_POST["requestDate];  // Date request was made.
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
