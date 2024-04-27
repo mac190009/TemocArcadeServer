@@ -7,10 +7,10 @@ $password = "Utdftw";
 $dbname = "arcade1";
 
 // variables submitted by users
-$playerID = _POST["playerID"];
-$gameName = _POST["gameName"];
-$score = _POST["score"];
-$playTime = _POST["playTime"];
+$playerID = $_POST["playerID"];  // Added $ at the start
+$gameName = $_POST["gameName"];  // Added $ at the start
+$score = $_POST["score"];        // Added $ at the start
+$playTime = $_POST["playTime"];  // Added $ at the start
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
