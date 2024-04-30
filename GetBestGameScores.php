@@ -1,5 +1,6 @@
 <?php
 //This page takes a game name as an argument and returns a JSON encoded string containing the 10 highest scores and the usernames of the player that made the score.
+//Example Output: [{"username":"test2","score":"2000"},{"username":"test3","score":"1337"},{"username":"test","score":"1337"},{"username":"test","score":"1000"},{"username":"test2","score":"1000"},{"username":"test2","score":"1000"},{"username":"test2","score":"1000"},{"username":"test2","score":"1000"},{"username":"test","score":"1000"},{"username":"test","score":"1000"}]
 $servername = "localhost";
 $username = "temoc";
 $password = "Utdftw";
